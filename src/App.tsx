@@ -96,7 +96,7 @@ function App() {
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full max-w-3xl"
+          className="w-full max-w-3xl p-3 rounded-2xl bg-black"
         >
           <ImageDropzone onImageConverted={handleImageConverted} />
         </motion.div>
