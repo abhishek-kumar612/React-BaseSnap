@@ -93,11 +93,11 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
   const rootProps = getRootProps();
 
   const getDropzoneStyles = () => {
-    if (isDragReject) return "border-red-300 bg-red-50/80 shadow-red-100";
+    if (isDragReject) return "border-red-500/60 bg-red-950/30 shadow-red-900/20";
     if (isDragAccept)
-      return "border-amber-400 bg-amber-50/80 shadow-amber-100 scale-[1.01]";
-    if (isDragActive) return "border-amber-300 bg-amber-50/50";
-    return "border-amber-200/60 bg-white hover:border-amber-300 hover:bg-amber-50/30 hover:shadow-lg hover:shadow-amber-100/50";
+      return "border-amber-500/60 bg-amber-950/20 shadow-amber-900/20 scale-[1.01]";
+    if (isDragActive) return "border-amber-500/40 bg-amber-950/10";
+    return "border-[#2a2a3a] bg-[#13131c] hover:border-amber-500/40 hover:bg-[#16161f] hover:shadow-lg hover:shadow-amber-900/10";
   };
 
   return (
@@ -123,10 +123,10 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
       <input {...getInputProps()} />
 
       {/* Decorative corner elements */}
-      <div className="absolute top-4 left-4 w-3 h-3 border-t-2 border-l-2 border-amber-300/50 rounded-tl" />
-      <div className="absolute top-4 right-4 w-3 h-3 border-t-2 border-r-2 border-amber-300/50 rounded-tr" />
-      <div className="absolute bottom-4 left-4 w-3 h-3 border-b-2 border-l-2 border-amber-300/50 rounded-bl" />
-      <div className="absolute bottom-4 right-4 w-3 h-3 border-b-2 border-r-2 border-amber-300/50 rounded-br" />
+      <div className="absolute top-4 left-4 w-3 h-3 border-t-2 border-l-2 border-amber-500/30 rounded-tl" />
+      <div className="absolute top-4 right-4 w-3 h-3 border-t-2 border-r-2 border-amber-500/30 rounded-tr" />
+      <div className="absolute bottom-4 left-4 w-3 h-3 border-b-2 border-l-2 border-amber-500/30 rounded-bl" />
+      <div className="absolute bottom-4 right-4 w-3 h-3 border-b-2 border-r-2 border-amber-500/30 rounded-br" />
 
       <AnimatePresence mode="wait">
         {isConverting ? (
@@ -141,20 +141,20 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
-                className="h-12 w-12 rounded-full border-[3px] border-amber-100 border-t-amber-500"
+                className="h-12 w-12 rounded-full border-[3px] border-[#2a2a3a] border-t-amber-500"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}
-                  className="h-4 w-4 rounded-full bg-amber-200"
+                  className="h-4 w-4 rounded-full bg-amber-500/40"
                 />
               </div>
             </div>
-            <p className="text-base font-medium text-slate-700">
+            <p className="text-base font-medium text-slate-200">
               Converting...
             </p>
-            <p className="mt-1 text-sm text-slate-400">Just a moment</p>
+            <p className="mt-1 text-sm text-slate-500">Just a moment</p>
           </motion.div>
         ) : isDragActive ? (
           <motion.div
@@ -173,7 +173,7 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-amber-400 to-orange-500 shadow-lg shadow-amber-500/30"
+                  className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-amber-500 to-orange-600 shadow-lg shadow-amber-500/20"
                 >
                   <svg
                     className="h-8 w-8 text-white"
@@ -189,10 +189,10 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
                     />
                   </svg>
                 </motion.div>
-                <p className="text-lg font-semibold text-amber-600">
+                <p className="text-lg font-semibold text-amber-400">
                   Drop to convert!
                 </p>
-                <p className="mt-1 text-sm text-amber-500/70">
+                <p className="mt-1 text-sm text-amber-500/60">
                   Release to start
                 </p>
               </>
@@ -205,10 +205,10 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
                     repeat: Infinity,
                     repeatDelay: 0.3,
                   }}
-                  className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-100"
+                  className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-950/50"
                 >
                   <svg
-                    className="h-8 w-8 text-red-500"
+                    className="h-8 w-8 text-red-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -221,10 +221,10 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
                     />
                   </svg>
                 </motion.div>
-                <p className="text-lg font-semibold text-red-500">
+                <p className="text-lg font-semibold text-red-400">
                   Invalid file
                 </p>
-                <p className="mt-1 text-sm text-red-400">JPG, PNG, WEBP only</p>
+                <p className="mt-1 text-sm text-red-500/70">JPG, PNG, WEBP only</p>
               </>
             )}
           </motion.div>
@@ -244,10 +244,10 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-amber-100 to-orange-100"
+              className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-amber-500/15 to-orange-500/15"
             >
               <svg
-                className="h-8 w-8 text-amber-600"
+                className="h-8 w-8 text-amber-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -262,12 +262,12 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
             </motion.div>
 
             {/* Text */}
-            <p className="mb-1 text-lg font-semibold text-slate-700">
+            <p className="mb-1 text-lg font-semibold text-slate-200">
               Drop your image here
             </p>
-            <p className="mb-5 text-sm text-slate-400">
+            <p className="mb-5 text-sm text-slate-500">
               or{" "}
-              <span className="text-amber-600 font-medium cursor-pointer hover:underline">
+              <span className="text-amber-400 font-medium cursor-pointer hover:underline">
                 click to browse
               </span>
             </p>
@@ -280,7 +280,7 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.08 }}
-                  className="rounded-full bg-amber-100/80 px-3 py-1 text-xs font-medium text-amber-700"
+                  className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-400"
                 >
                   {format}
                 </motion.span>
@@ -292,7 +292,7 @@ export function ImageDropzone({ onImageConverted }: ImageDropzoneProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="mt-4 text-xs text-slate-400"
+              className="mt-4 text-xs text-slate-500"
             >
               Maximum file size: {MAX_FILE_SIZE / 1024 / 1024}MB
             </motion.p>

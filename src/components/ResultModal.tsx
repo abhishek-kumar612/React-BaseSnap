@@ -67,7 +67,7 @@ export function ResultModal({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
       />
 
       {/* Modal Content */}
@@ -77,7 +77,7 @@ export function ResultModal({
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full rounded-2xl overflow-hidden max-w-2xl max-h-[90vh] bg-white shadow-2xl"
+        className="relative w-full rounded-2xl overflow-hidden max-w-2xl max-h-[90vh] bg-[#16161f] shadow-2xl border border-[#2a2a3a]"
       >
         {/* Close Button */}
         <button
@@ -100,12 +100,12 @@ export function ResultModal({
         </button>
 
         {/* Image Preview Section */}
-        <div className="relative bg-linear-to-br from-slate-100 to-slate-50 p-6 sm:p-8">
+        <div className="relative bg-linear-to-br from-[#1a1a26] to-[#13131c] p-6 sm:p-8">
           {/* Subtle grid pattern */}
           <div
-            className="absolute inset-0 opacity-40"
+            className="absolute inset-0 opacity-30"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cbd5e1' fill-opacity='0.3'%3E%3Ccircle cx='1' cy='1' r='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234a4a5a' fill-opacity='0.3'%3E%3Ccircle cx='1' cy='1' r='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
             }}
           />
 
@@ -123,55 +123,42 @@ export function ResultModal({
             <img
               src={base64}
               alt={fileName}
-              className="max-h-48 sm:max-h-56 rounded-xl object-contain shadow-lg shadow-slate-900/10"
+              className="max-h-48 sm:max-h-56 rounded-xl object-contain shadow-lg shadow-black/30"
             />
           </motion.div>
         </div>
 
         {/* Content Section */}
         <div className="p-6 sm:p-8">
-          {/* Success Header */}
-          {/* <div className="mb-5 flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-              <svg className="h-5 w-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-semibold text-slate-800">Conversion Complete</h3>
-              <p className="text-sm text-slate-500 truncate" title={fileName}>{fileName}</p>
-            </div>
-          </div> */}
-
           {/* Stats */}
           <div className="mb-5 grid grid-cols-2 gap-3">
-            <div className="rounded-xl bg-slate-50 px-4 py-3">
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+            <div className="rounded-xl bg-[#1e1e2a] px-4 py-3">
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
                 Characters
               </p>
-              <p className="mt-0.5 text-lg font-bold text-slate-700">
+              <p className="mt-0.5 text-lg font-bold text-slate-200">
                 {charCount}
               </p>
             </div>
-            <div className="rounded-xl bg-slate-50 px-4 py-3">
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+            <div className="rounded-xl bg-[#1e1e2a] px-4 py-3">
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
                 Original Size
               </p>
-              <p className="mt-0.5 text-lg font-bold text-slate-700">
+              <p className="mt-0.5 text-lg font-bold text-slate-200">
                 {fileSizeKB} KB
               </p>
             </div>
           </div>
 
           {/* Base64 Preview - Truncated for performance */}
-          <div className="mb-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <div className="mb-5 rounded-xl border border-[#2a2a3a] bg-[#1a1a24] p-4">
             <div className="mb-2 flex items-center justify-between">
-              <span className="text-xs font-semibold text-slate-600">
+              <span className="text-xs font-semibold text-slate-400">
                 Base64 String
               </span>
-              <span className="text-[10px] text-slate-400">Preview only</span>
+              <span className="text-[10px] text-slate-600">Preview only</span>
             </div>
-            <div className="rounded-lg bg-white border border-slate-100 p-3 overflow-hidden">
+            <div className="rounded-lg bg-[#111118] border border-[#2a2a3a] p-3 overflow-hidden">
               <code className="block text-[11px] leading-relaxed text-slate-500 font-mono break-all">
                 {truncatedPreview}
               </code>
@@ -186,8 +173,8 @@ export function ResultModal({
               onClick={copyToClipboard}
               className={`cursor-pointer flex-1 flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold shadow-sm transition-all ${
                 isCopied
-                  ? "bg-emerald-500 text-white shadow-emerald-500/25"
-                  : "bg-linear-to-r from-amber-500 to-orange-500 text-white shadow-amber-500/25 hover:shadow-md hover:shadow-amber-500/30"
+                  ? "bg-emerald-600 text-white shadow-emerald-600/25"
+                  : "bg-linear-to-r from-amber-500 to-orange-600 text-white shadow-amber-500/20 hover:shadow-md hover:shadow-amber-500/25"
               }`}
             >
               {isCopied ? (
@@ -230,7 +217,7 @@ export function ResultModal({
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               onClick={onClose}
-              className="cursor-pointer flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-600 shadow-sm transition-colors hover:bg-slate-50"
+              className="cursor-pointer flex items-center justify-center gap-2 rounded-xl border border-[#2a2a3a] bg-[#1e1e2a] px-5 py-3 text-sm font-medium text-slate-300 shadow-sm transition-colors hover:bg-[#252533]"
             >
               <svg
                 className="h-4 w-4"

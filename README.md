@@ -1,6 +1,6 @@
 # ⚡ BaseSnap — Image to Base64 Converter
 
-A modern React TypeScript based web app to convert images into Base64 instantly, with drag-and-drop support, format validation, and fast performance.
+A modern React TypeScript based web app to convert images into Base64 instantly, with drag-and-drop support, format validation, and fast performance — all wrapped in a sleek dark theme.
 
 ---
 
@@ -17,6 +17,7 @@ A modern React TypeScript based web app to convert images into Base64 instantly,
 - 🖼️ Supports JPG, PNG, and WebP formats
 - ✅ File type validation
 - 📋 Copy Base64 string with one click
+- 🌑 Pure dark theme with amber accents
 - 🎨 Clean and modern UI
 - 📱 Fully responsive design
 - ⚙️ Built with performance in mind
@@ -29,3 +30,4 @@ A modern React TypeScript based web app to convert images into Base64 instantly,
 - **TypeScript**
 - **Vite**
 - **Tailwind CSS**
+- **Framer Motion**

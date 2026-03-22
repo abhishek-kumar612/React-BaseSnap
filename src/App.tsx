@@ -31,16 +31,17 @@ function App() {
   };
 
   return (
-    <div className="h-screen bg-linear-to-br from-amber-50/40 via-white to-orange-50/30 flex flex-col overflow-hidden">
+    <div className="h-screen bg-linear-to-br from-[#0a0a0f] via-[#111118] to-[#0d0d14] flex flex-col overflow-hidden">
       <Toaster
         richColors
         position="top-center"
         toastOptions={{
           style: {
-            background: "#ffffff",
-            border: "1px solid #fef3c7",
+            background: "#1a1a24",
+            color: "#e2e2ea",
+            border: "1px solid #2a2a3a",
             borderRadius: "14px",
-            boxShadow: "0 10px 40px -10px rgba(251, 191, 36, 0.15)",
+            boxShadow: "0 10px 40px -10px rgba(0, 0, 0, 0.5)",
             padding: "14px 18px",
             fontSize: "14px",
           },
@@ -64,7 +65,7 @@ function App() {
               stiffness: 200,
               damping: 15,
             }}
-            className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 shadow-lg shadow-amber-500/25"
+            className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-600 shadow-lg shadow-amber-500/20"
           >
             <svg
               className="h-6 w-6 text-white"
@@ -80,11 +81,11 @@ function App() {
               />
             </svg>
           </motion.div>
-          <h1 className="text-3xl sm:text-4xl font-bold leading-none tracking-tight text-slate-800">
+          <h1 className="text-3xl sm:text-4xl font-bold leading-none tracking-tight text-white">
             BaseSnap
           </h1>
         </div>
-        <p className="text-slate-500 text-md mt-4">
+        <p className="text-slate-400 text-md mt-4">
           Convert images to Base64 instantly
         </p>
       </motion.header>
@@ -108,14 +109,14 @@ function App() {
         transition={{ delay: 0.6, duration: 0.5 }}
         className="py-3 text-center shrink-0"
       >
-        <div className="inline-flex items-center gap-2 text-xs text-slate-400">
+        <div className="inline-flex items-center gap-2 text-xs text-slate-500">
           <span className="flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-1.5 w-1.5 animate-ping rounded-full bg-amber-400 opacity-75"></span>
+            <span className="absolute inline-flex h-1.5 w-1.5 animate-ping rounded-full bg-amber-500 opacity-75"></span>
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-500"></span>
           </span>
           <span>
             Supports{" "}
-            <span className="font-medium text-slate-500">JPG, PNG, WEBP</span> ·
+            <span className="font-medium text-slate-400">JPG, PNG, WEBP</span> ·
             Max {MAX_FILE_SIZE_LIMIT}MB
           </span>
         </div>
